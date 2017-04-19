@@ -1,4 +1,4 @@
-# prolog_exercises
+# Prolog Exercises
 Built using Prolog; basic exercises
 
 ### Available Methods:

@@ -1,16 +1,30 @@
-/* Put, Get */
+/*
+Put
+This definition uses recursion to implement Put in an array.
+*/
 put(K,V,[],[[K,V]]).
 put(K,V,[[K,_]|T],[[K,V]|T]).
 put(K,V,[[SomeV,SomeV2]|T],[[SomeV,SomeV2]|D]):- put(K,V,T,D).
+
+/*
+Get
+This definition uses recursion to implement Get from an array.
+*/
 get(K,[[K,V]|T],V).
 get(K,[[X,Z]|T],V):- get(K,T,V).
 
-/* Subsequence */
+/*
+Subsequence
+This definition uses recursion to implement Subsequence from an array.
+*/
 subseq([],[]).
 subseq([X|T],[X|R]):- subseq(T,R).
 subseq(X,[Y|R]):- subseq(X,R).
 
-/* VerbalArithmetic */
+/*
+VerbalArithmetic
+This definition uses recursion to implement Verbal Arithmetic (https://en.wikipedia.org/wiki/Verbal_arithmetic).
+*/
 add(Carry, X, Y, 1, Res2):- (Carry+X+Y) > 9, Res2 is ((Carry+X+Y) mod 10).
 add(Carry, X, Y, 0, Res):- (Carry+X+Y) =< 9, Res is (Carry+X+Y).
 
